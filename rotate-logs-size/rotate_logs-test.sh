@@ -35,7 +35,11 @@ fi
 
 APP_LOG="${LOG_FILE}.${DATE}"
 cp "$LOG_FILE" "$APP_LOG" && > "$LOG_FILE"
-gzip "$APP_LOG"
+gzip "$APP_LOG" && echo "Ротация Успешно создана"
+
+basename "${APP_LOG}.gz"
+
+echo "${APP_LOG}.gz путь файла"
 
 #touch app.log app.log.$DATE 
 #cp app.log app.log.$DATE
