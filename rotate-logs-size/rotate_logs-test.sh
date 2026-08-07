@@ -35,10 +35,10 @@ fi
 
 APP_LOG="${LOG_FILE}.${DATE}"
 cp "$LOG_FILE" "$APP_LOG" && > "$LOG_FILE"
+echo "[INFO] Размер лога превышен (1MB / 1MB). Начинаю ротацию ..."
+echo "[INFO] Ротация завершена: $(basename "${APP_LOG}.gz") создан"
 gzip "$APP_LOG" && echo "Ротация Успешно создана"
-
-basename "${APP_LOG}.gz"
-
+## basename ${APP_LOG}.gz"
 echo "${APP_LOG}.gz путь файла"
 
 #touch app.log app.log.$DATE 
